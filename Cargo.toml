@@ -1,0 +1,11 @@
+[package]
+name = "zed_thrift"
+version = "0.0.1"
+license = "MIT"
+
+[lib]
+path = "src/thrift.rs"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+zed_extension_api = "0.5.0"

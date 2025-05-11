@@ -1,0 +1,15 @@
+id = "thrift"
+name = "Thrift"
+schema_version = 1
+version = "0.0.1"
+authors = ["likaihua <554571823@qq.com>"]
+description = "Thrift Support."
+repository = "https://github.com/likaihua/zed-thrift"
+
+[grammars.thrift]
+repository = "https://github.com/tree-sitter-grammars/tree-sitter-thrift"
+rev = "68fd0d80943a828d9e6f49c58a74be1e9ca142cf"
+
+[language_servers.thrift-language-server]
+name = "Thrift Language Server"
+languages = ["Thrift"]

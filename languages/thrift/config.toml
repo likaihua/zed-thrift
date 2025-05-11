@@ -1,0 +1,4 @@
+name = "Thrift"
+grammar = "thrift"
+path_suffixes = ["thrift"]
+line_comments = ["# "]

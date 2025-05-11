@@ -1,0 +1,13 @@
+**/*.db
+**/cargo-target
+**/target
+**/venv
+*.wasm
+*.xcodeproj
+.DS_Store
+.idea
+.vscode
+.AppleDouble
+.LSOverride
+target
+grammars
