@@ -1,8 +1,7 @@
 extern crate zed_extension_api;
-use zed_extension_api::{self as zed, Result};
-use zed_extension_api::settings::LspSettings;
+use zed_extension_api::{self as zed, Result, settings::LspSettings};
 
-const THRIFT_LANGUAGE_SERVER_NAME: &str = "thrift-language-server";
+const THRIFT_LANGUAGE_SERVER_NAME: &str = "thrift-ls";
 
 struct ThriftLanguageServerBinary {
     path: String,
@@ -17,7 +16,7 @@ impl ThriftExtension {
         _language_server_id: &zed::LanguageServerId,
         worktree: &zed::Worktree,
     ) -> Result<ThriftLanguageServerBinary> {
-        let binary_settings = LspSettings::for_worktree("thrift-language-server", worktree)
+        let binary_settings = LspSettings::for_worktree("thrift-ls", worktree)
             .ok()
             .and_then(|lsp_settings| lsp_settings.binary);
         let binary_args = binary_settings
@@ -47,6 +46,7 @@ impl zed::Extension for ThriftExtension {
         Self
     }
 
+    // 启动 LSP 服务器
     fn language_server_command(
         &mut self,
         language_server_id: &zed_extension_api::LanguageServerId,
@@ -57,7 +57,7 @@ impl zed::Extension for ThriftExtension {
             command: binary.path,
             args: binary
                 .args
-                .unwrap_or_else(|| vec!["--stdio".into()]),
+                .unwrap_or_else(|| vec!["-logs".into(), "".into()]),
             env: Default::default(),
         })
     }

@@ -10,6 +10,6 @@ repository = "https://github.com/likaihua/zed-thrift"
 repository = "https://github.com/tree-sitter-grammars/tree-sitter-thrift"
 rev = "68fd0d80943a828d9e6f49c58a74be1e9ca142cf"
 
-[language_servers.thrift-language-server]
+[language_servers.thrift-ls]
 name = "Thrift Language Server"
 languages = ["Thrift"]
